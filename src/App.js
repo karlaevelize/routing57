@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       Pokemon App
-      {/* Naviagtionn goes here */}
+      {/* Naviagtion goes here */}
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/details/:name" element={<Details/>}/>
