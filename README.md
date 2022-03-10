@@ -45,3 +45,45 @@ import { Routes, Route } from "react-router-dom";
 ### Step 5 - You are all done! 🎉
 
 ## Adding Dynamic Routing
+
+### Step 1
+
+- Register a dynamic route
+
+```js
+<Routes>
+  <Route path="/details/:id" element={<DiscoverPage />} />
+</Routes>
+```
+
+### Step 2
+
+- You need to choose an element to link to your details page
+
+```js
+<Link to={`/details/${item.id}`}>
+  <h3>{item.name}</h3>
+</Link>
+```
+
+### Step 3
+
+- On the details page, retrieve the param from the url
+
+```js
+const params = useParams()
+console.log("params", params) //always console.log and check the object in the console
+```
+
+### Step 4 
+
+- Make an API call (make sure you are using the correct endpoint) and pass the params to it
+
+```js
+  const fetchItems = async () => {
+    const response = await axios.get(`example-api/${params.id}`)
+    console.log("one pokemon", response)
+  }
+```
+
+### Step 5 - You are all done! 🎉
